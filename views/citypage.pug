@@ -1,0 +1,17 @@
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://fonts.googleapis.com/css2?family=Vollkorn:wght@900&display=swap' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='../style.css')
+  title The weather app
+main.main
+  section.top-banner-section
+    h1.top-banner-heading Welcome to the weather app
+    a.top-banner-back-button(href='/') BACK
+  section.weather-card
+    h3.weather-card-header #{name} #{country}
+    p.weather-card-temp #{temp}°C
+    figure
+      img.weather-card-img(src=icon alt=weather)
+      figcaption.weather-card-img-description #{weather}

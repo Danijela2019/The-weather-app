@@ -1,0 +1,150 @@
+/*--------BASE*/
+* {
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+body {
+  background:url('sky.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: 40%;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+/*---------MODULES--*/
+
+/* TOP BANNER_--*/
+.top-banner-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom:1rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+.top-banner-heading {
+  font-family: 'Vollkorn', serif;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  padding: 0 0 20px 0;
+  margin-top: 0;
+  text-align: center;
+}
+.top-banner-button:hover,
+.top-banner-back-button:hover {
+  background: rgb(224, 211, 186);
+}
+.top-banner-button, 
+.top-banner-back-button {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 1rem 1.5rem;
+  margin-left: 4rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  background: rgb(202, 121, 45);
+  font-family: 'Vollkorn', serif;
+  height: 50px;
+}
+.top-banner-back-button {
+  text-decoration: none;
+  color:black;
+  margin: auto;
+}
+.top-banner-button {
+  margin-left:3rem;
+}
+
+.top-banner-input {
+  font-size: 1.5rem;
+  height: 40px;
+  text-align: center;
+  padding: 5px 5px 10px;
+  border-bottom: 1px solid;
+  border-radius:7px;
+  background-color: rgb(235, 222, 168);
+  margin-left:2rem ;
+}
+.top-banner-paragraph {
+  font-family: 'Vollkorn', serif;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  padding: 5rem 0 2rem 0;
+  text-align: center;
+}
+
+/*------------------WEATHER CARD-*/
+.weather-card {
+  background-color: rgba(209, 202, 202, 0.541);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 70vh;
+  width: 40vh;
+  align-items: center;
+  border-radius: 10px;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+.weather-card-temp {
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 1rem;
+}
+.weather-card-header {
+  font-size: 1rem;
+}
+/*-------------STATE--*/
+
+@media only screen and (min-width: 870px) {
+.top-banner-heading {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+  .top-banner-paragraph {
+    font-size: 1.5rem;
+  }
+  .top-banner-input {
+    font-size: 2rem;
+    height: 53px;
+    margin-top: auto;
+  }
+  .top-banner-button
+  .top-banner-back-button {
+    height:4rem ;
+    width: 8rem ;
+    margin-left: 1rem;
+  }
+  .top-banner-button {
+    margin-left:4rem;
+  }
+  .weather-card {
+  max-height: 60vh;
+  width: 40vh;
+  }
+  .weather-card-temp {
+  height: 3rem;
+  font-size: 5rem;
+  margin: 1rem;
+  }
+  .weather-card-img-description {
+   font-size:1.5rem;
+  }
+  .weather-card-header {
+    font-size: 1.5rem;
+  }
+  .weather-card-img {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
