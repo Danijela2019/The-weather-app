@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const app = express();
-const port =  process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const apiKey = process.env.API_KEY;
 
 app.use(express.static(`${__dirname}/public`));
@@ -15,12 +15,12 @@ app.use(bodyParser.json());
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-function fetchCoordinates(lat, lon, response) {
+function fetchCoordinates(lat, lon, coordResponse) {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   fetch(url)
     .then((res) => res.json())
     .then((coordData) => {
-      response.render('nearby',
+      coordResponse.render('nearby',
         {
           temp: Math.round(coordData.main.temp),
           name: coordData.name,
@@ -33,12 +33,12 @@ function fetchCoordinates(lat, lon, response) {
       console.log('Fetch coordinates error', error);
     });
 }
-function fetchCity(city, response) {
+function fetchCity(city, cityResponse) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   fetch(url)
     .then((res) => res.json())
     .then((cityData) => {
-      response.render('citypage',
+      cityResponse.render('citypage',
         {
           temp: Math.round(cityData.main.temp),
           name: cityData.name,
@@ -52,13 +52,13 @@ function fetchCity(city, response) {
     });
 }
 
-app.get('/', (request, response) => {
+app.get('/', (_request, response) => {
   response.render('homepage');
 });
 
 app.get('/nearby', (request, response) => {
-  const { lat } = request.query;
   const { lon } = request.query;
+  const { lat } = request.query;
   fetchCoordinates(lat, lon, response);
 });
 
