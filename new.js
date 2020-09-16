@@ -15,12 +15,16 @@ app.use(bodyParser.json());
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-function fetchCoordinates(lat, lon, coordResponse) {
+function fetchCoordinates(lat, lon, response) {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  //console.log('URL', url);
+  console.log('LATLON', lat, lon);
   fetch(url)
     .then((res) => res.json())
     .then((coordData) => {
-      coordResponse.render('nearby',
+      console.log('COORDATA', coordData);
+      //console.log("Response", response);
+      response.render('nearby',
         {
           temp: Math.round(coordData.main.temp),
           name: coordData.name,
@@ -33,12 +37,12 @@ function fetchCoordinates(lat, lon, coordResponse) {
       console.log('Fetch coordinates error', error);
     });
 }
-function fetchCity(city, cityResponse) {
+function fetchCity(city, response) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   fetch(url)
     .then((res) => res.json())
     .then((cityData) => {
-      cityResponse.render('citypage',
+      response.render('citypage',
         {
           temp: Math.round(cityData.main.temp),
           name: cityData.name,
@@ -56,9 +60,16 @@ app.get('/', (_request, response) => {
   response.render('homepage');
 });
 
-app.get('/nearby', (request, response) => {
-  const { lon } = request.query;
-  const { lat } = request.query;
+app.post('/nearby', (request, response) => {
+  // console.log('Body:',request.body);
+  const { lat } = request.body;
+  // console.log('LAT;',lat);
+  // const somethingLat = request.body.lat;
+  // console.log('SomethinhLat',somethingLat)
+  const { lon } = request.body;
+  // console.log('Lon', lon);
+  // const { lon } = request.query;
+  // const {lat}= request.query;
   fetchCoordinates(lat, lon, response);
 });
 
