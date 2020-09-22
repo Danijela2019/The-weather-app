@@ -1,9 +1,15 @@
 /*--------BASE*/
-* {
-  padding: 0;
-  box-sizing: border-box;
-  font-weight: normal;
+html, body, div, h1, h2, h3, h4, h5, h6, p, a, img, b, u, i,  ol, ul, li,
+fieldset, form, label, legend,table, article, aside, figure, figcaption, footer, header, hgroup, 
+menu, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+  vertical-align: baseline;
 }
+
 body {
   background:url('sky.jpg');
   background-size: cover;
@@ -54,12 +60,11 @@ body {
   border-radius: 5px;
   background: rgb(202, 121, 45);
   font-family: 'Vollkorn', serif;
-  height: 50px;
 }
 .top-banner-back-button {
   text-decoration: none;
   color:black;
-  margin: auto;
+  margin: 1rem;
 }
 .top-banner-button {
   margin-left:3rem;
@@ -89,11 +94,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-height: 70vh;
-  width: 40vh;
   align-items: center;
+  height: 60vh;
+  width: 40vh;
   border-radius: 10px;
   font-family: 'Merriweather Sans', sans-serif;
+  margin-top: 1rem;
 }
 .weather-card-temp {
   font-size: 1.5rem;
@@ -123,12 +129,13 @@ body {
     height:4rem ;
     width: 8rem ;
     margin-left: 1rem;
+    margin-bottom: 2rem;
   }
   .top-banner-button {
     margin-left:4rem;
   }
   .weather-card {
-  max-height: 60vh;
+  height: 60vh;
   width: 40vh;
   }
   .weather-card-temp {
