@@ -1,7 +1,7 @@
 # WeatherAPI
 
 This is a weather application , renders the local weather using the [Openweathermap](https://openweathermap.org) API. 
-The app is build using javaScript.It has it's own server build using [the Express framework](https://expressjs.com/) and server side rendering using [PUGjs](https://pugjs.org/api/getting-started.html).
+The app is build withjavaScript.It has it's own server build using [Express](https://expressjs.com/) and server side rendering with [PUG JavaScript](https://pugjs.org/api/getting-started.html).
 
 ## The layout of the app : 
 * Title
